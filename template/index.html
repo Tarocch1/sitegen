@@ -1,15 +1,33 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  {{#if description}}
-  <meta name="description" content="{{description}}">
-  {{/if}}
-  <title>{{title}}</title>
-</head>
-<body>
-{{{html}}}
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {{#if description}}
+    <meta name="description" content="{{description}}" />
+    {{/if}}
+    <title>{{title}}</title>
+  </head>
+  <body>
+    {{{html}}}
+    <script>
+      let pathname = window.location.pathname;
+      if (pathname.endsWith('/')) pathname += 'index.html';
+      const ws = new WebSocket(
+        `ws://${window.location.host}:${window.location.port}`,
+      );
+      ws.addEventListener('open', function (event) {
+        ws.send('ping');
+        setInterval(function () {
+          ws.send('ping');
+        }, 60 * 1000);
+      });
+      ws.addEventListener('message', function (event) {
+        if (event.data === pathname) {
+          window.location.reload();
+        }
+      });
+    </script>
+  </body>
 </html>

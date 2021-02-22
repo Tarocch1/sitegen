@@ -6,10 +6,12 @@
     "sitegen": "./bin/sitegen.js"
   },
   "dependencies": {
+    "chokidar": "^3.5.1",
     "commander": "^7.1.0",
     "handlebars": "^4.7.7",
     "lodash": "^4.17.21",
     "memfs": "^3.2.0",
-    "mime-types": "^2.1.29"
+    "mime-types": "^2.1.29",
+    "ws": "^7.4.3"
   }
 }
