@@ -1,0 +1,23 @@
+body {
+  margin: 48px 24px;
+}
+
+main {
+  width: 1000px;
+  margin: auto;
+}
+
+@media screen and (max-width: 1048px) {
+  main {
+    width: calc(100% - 48px);
+  }
+}
+
+.wysiwyg pre code {
+  font-size: 0.9em;
+  line-height: 0.9em;
+  padding: 0;
+}
+.wysiwyg table {
+  border-collapse: collapse;
+}

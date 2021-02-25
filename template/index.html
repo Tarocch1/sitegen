@@ -8,9 +8,19 @@
     <meta name="description" content="{{description}}" />
     {{/if}}
     <title>{{title}}</title>
+    <link rel="stylesheet" href="/assets/css/normalize.css" />
+    <link rel="stylesheet" href="/assets/css/wysiwyg.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/prismjs@latest/themes/prism.css"
+    />
   </head>
   <body>
-    {{{html}}}
+    <main>
+      <div class="wysiwyg">{{{html}}}</div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@latest/prism.min.js"></script>
     <script>
       let pathname = window.location.pathname;
       if (pathname.endsWith('/')) pathname += 'index.html';
