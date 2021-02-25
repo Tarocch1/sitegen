@@ -14,8 +14,6 @@ main {
 }
 
 .wysiwyg pre code {
-  font-size: 0.9em;
-  line-height: 0.9em;
   padding: 0;
 }
 .wysiwyg table {
