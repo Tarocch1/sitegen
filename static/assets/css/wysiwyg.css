@@ -157,12 +157,6 @@
   margin-top: 1.4em;
 }
 
-.wysiwyg p + dl,
-.wysiwyg p + ol,
-.wysiwyg p + ul {
-  margin-top: -1.4em;
-}
-
 .wysiwyg dd {
   margin-left: 1.4em;
 }
