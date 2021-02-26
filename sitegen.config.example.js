@@ -3,8 +3,9 @@ module.exports = {
   description: '',
   publicFolder: 'public',
   base: '',
+  watch: true,
   server: {
     host: '0.0.0.0',
-    port: 80,
+    port: 3000,
   },
 };
