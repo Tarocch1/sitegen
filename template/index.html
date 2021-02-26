@@ -9,18 +9,28 @@
     {{/if}}
     <title>{{title}}</title>
     <link rel="stylesheet" href="/assets/css/normalize.css" />
+    <link rel="stylesheet" href="/assets/css/wysiwyg.css" />
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/prismjs@latest/themes/prism.css"
+      href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism.css"
     />
-    <link rel="stylesheet" href="/assets/css/wysiwyg.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.css"
+    />
     <link rel="stylesheet" href="/assets/css/style.css" />
   </head>
-  <body>
+  <body class="line-numbers">
     <main>
       <div class="wysiwyg">{{{html}}}</div>
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@latest/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script>
+      Prism.plugins.autoloader.languages_path =
+        'https://cdn.jsdelivr.net/npm/prismjs/components/';
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.js"></script>
     <script>
       let pathname = window.location.pathname;
       if (pathname.endsWith('/')) pathname += 'index.html';

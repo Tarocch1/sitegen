@@ -21,6 +21,7 @@ main {
 }
 .wysiwyg pre code {
   padding: 0;
+  line-height: 1.5;
 }
 .wysiwyg table {
   border-collapse: collapse;
