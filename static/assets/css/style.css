@@ -3,14 +3,9 @@ body {
 }
 
 main {
-  width: 1000px;
+  width: 100%;
+  max-width: 1000px;
   margin: auto;
-}
-
-@media screen and (max-width: 1048px) {
-  main {
-    width: 100%;
-  }
 }
 
 .wysiwyg .header-anchor {
