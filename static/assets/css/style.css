@@ -13,6 +13,17 @@ main {
   }
 }
 
+.wysiwyg .header-anchor {
+  visibility: hidden;
+}
+.wysiwyg h1:hover .header-anchor,
+.wysiwyg h2:hover .header-anchor,
+.wysiwyg h3:hover .header-anchor,
+.wysiwyg h4:hover .header-anchor,
+.wysiwyg h5:hover .header-anchor,
+.wysiwyg h6:hover .header-anchor {
+  visibility: initial;
+}
 .wysiwyg pre code {
   padding: 0;
 }
