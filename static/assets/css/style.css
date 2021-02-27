@@ -1,5 +1,5 @@
 body {
-  margin: 48px 24px;
+  margin: 40px;
 }
 
 main {
@@ -8,8 +8,20 @@ main {
   margin: auto;
 }
 
-.wysiwyg .header-anchor {
+.wysiwyg h1 .header-anchor,
+.wysiwyg h2 .header-anchor,
+.wysiwyg h3 .header-anchor,
+.wysiwyg h4 .header-anchor,
+.wysiwyg h5 .header-anchor,
+.wysiwyg h6 .header-anchor {
   visibility: hidden;
+  display: inline-block;
+  box-sizing: border-box;
+  width: 38px;
+  text-align: right;
+  padding-right: 8px;
+  border-bottom: 0;
+  margin-left: -38px;
 }
 .wysiwyg h1:hover .header-anchor,
 .wysiwyg h2:hover .header-anchor,
