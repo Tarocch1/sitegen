@@ -1,3 +1,5 @@
+const dayjs = require('dayjs');
+
 module.exports = {
   title: '',
   description: '',
@@ -5,7 +7,8 @@ module.exports = {
   base: '',
   watch: true,
   markdown: {
-    lineNumbers: true,
+    lineNumbers: false,
+    timeFormatter: time => dayjs(time).format('YYYY-MM-DD HH:mm:ss'),
   },
   server: {
     host: '0.0.0.0',

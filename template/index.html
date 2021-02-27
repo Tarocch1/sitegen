@@ -15,10 +15,15 @@
     <link rel="stylesheet" href="/assets/css/prism-line-numbers.css" />
     <link rel="stylesheet" href="/assets/css/style.css" />
   </head>
-  <body class="line-numbers">
+  <body>
     <main>
       <div class="wysiwyg">{{{html}}}</div>
     </main>
+    <footer>
+      {{#if time}}
+      <div class="time">{{time}}</div>
+      {{/if}}
+    </footer>
     <script>
       let pathname = window.location.pathname;
       if (pathname.endsWith('/')) pathname += 'index.html';
