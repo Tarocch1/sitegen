@@ -1,7 +1,15 @@
 {
   "name": "@tarocch1/sitegen",
   "version": "0.0.1",
-  "private": true,
+  "description": "A simple static site generator.",
+  "license": "MIT",
+  "author": "Tarocch1 <huiben.fang@gmail.com> (https://github.com/Tarocch1)",
+  "homepage": "https://github.com/Tarocch1/sitegen#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tarocch1/sitegen.git"
+  },
+  "bugs": "https://github.com/Tarocch1/sitegen/issues",
   "bin": {
     "sitegen": "./bin/sitegen.js"
   },
