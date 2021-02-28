@@ -11,6 +11,7 @@
     "commander": "^7.1.0",
     "cross-spawn": "^7.0.3",
     "dayjs": "^1.10.4",
+    "fs-extra": "^9.1.0",
     "gray-matter": "^4.0.2",
     "handlebars": "^4.7.7",
     "lodash": "^4.17.21",
