@@ -10,6 +10,12 @@
     "url": "https://github.com/Tarocch1/sitegen.git"
   },
   "bugs": "https://github.com/Tarocch1/sitegen/issues",
+  "files": [
+    "bin",
+    "lib",
+    "static",
+    "template"
+  ],
   "bin": {
     "sitegen": "./bin/sitegen.js"
   },
