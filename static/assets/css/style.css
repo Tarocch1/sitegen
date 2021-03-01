@@ -44,6 +44,12 @@ footer {
 .wysiwyg table {
   border-collapse: collapse;
 }
+.wysiwyg details {
+  margin-bottom: 2.8em;
+}
+.wysiwyg details:last-child {
+  margin-bottom: 0;
+}
 
 .time {
   text-align: right;
