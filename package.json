@@ -20,8 +20,8 @@
     "sitegen": "./bin/sitegen.js"
   },
   "scripts": {
-    "dev": "./bin/sitegen.js dev",
-    "build": "./bin/sitegen.js build"
+    "dev": "npx ./bin/sitegen.js dev",
+    "build": "npx ./bin/sitegen.js build"
   },
   "dependencies": {
     "chalk": "^4.1.0",
