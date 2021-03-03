@@ -44,6 +44,10 @@ footer {
 .wysiwyg table {
   border-collapse: collapse;
 }
+.wysiwyg ul,
+.wysiwyg ol {
+  padding-left: 0;
+}
 .wysiwyg details {
   margin-bottom: 2.8em;
 }
