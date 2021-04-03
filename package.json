@@ -29,6 +29,7 @@
     "commander": "^7.1.0",
     "cross-spawn": "^7.0.3",
     "dayjs": "^1.10.4",
+    "fast-glob": "^3.2.5",
     "fs-extra": "^9.1.0",
     "gray-matter": "^4.0.2",
     "handlebars": "^4.7.7",
@@ -49,7 +50,9 @@
     "normalize.css": "^8.0.1",
     "ora": "^5.3.0",
     "prismjs": "^1.23.0",
+    "sass": "^1.32.8",
     "uslug": "^1.0.4",
+    "vite": "^2.1.5",
     "ws": "^7.4.3"
   }
 }
