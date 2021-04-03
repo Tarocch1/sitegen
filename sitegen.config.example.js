@@ -17,5 +17,6 @@ module.exports = {
     host: '0.0.0.0', // Dev server host.
     port: 3000, // Dev server port.
     watch: true, // Whether to watch file change to hot reload page.
+    open: true, // Whether to open the site in the browser on server start.
   },
 };
