@@ -47,6 +47,14 @@ footer {
 .wysiwyg details:last-child {
   margin-bottom: 0;
 }
+.wysiwyg .mermaid {
+  margin-bottom: 1.4em;
+  width: 100%;
+  overflow-x: auto;
+}
+.wysiwyg .mermaid:last-child {
+  margin-bottom: 0;
+}
 
 .time {
   text-align: right;
