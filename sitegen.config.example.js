@@ -7,6 +7,10 @@ module.exports = {
   markdown: {
     lineNumbers: false, // Whether to show line numbers to the left of each code blocks.
     timeFormatter: time => dayjs(time).format('YYYY-MM-DD HH:mm:ss'), // Formatter for the time at the bottom of the page.
+    mermaid: {
+      // Config for mermaid. See https://mermaid-js.github.io/mermaid/#/Setup?id=configuration.
+      startOnLoad: true,
+    },
   },
   build: {
     distDir: 'dist', // Build dist path.
