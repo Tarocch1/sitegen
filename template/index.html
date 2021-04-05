@@ -16,17 +16,32 @@
       rel="stylesheet"
       href="prismjs/plugins/line-numbers/prism-line-numbers.css"
     />
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/index.css" />
   </head>
   <body>
-    <main>
-      <div class="wysiwyg">{{{html}}}</div>
-    </main>
-    <footer>
-      {{#if time}}
-      <div class="time">{{time}}</div>
+    <section>
+      {{#if toc}}
+      <aside>
+        {{#each toc}} {{#with this}}
+        <div>
+          <a class="level-{{ level }}" href="#{{ id }}" title="{{ title }}">
+            {{ title }}
+          </a>
+        </div>
+        {{/with}} {{/each}}
+      </aside>
       {{/if}}
-    </footer>
+      <article>
+        <main>
+          <div class="wysiwyg">{{{html}}}</div>
+        </main>
+        <footer>
+          {{#if time}}
+          <div class="time">{{time}}</div>
+          {{/if}}
+        </footer>
+      </article>
+    </section>
     {{#if hot}}
     <script>
       let pathname = window.location.pathname;
