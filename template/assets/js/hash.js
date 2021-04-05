@@ -6,10 +6,6 @@ window.addEventListener('load', function () {
   document.querySelectorAll('aside a').forEach(function (element) {
     const url = new URL(element.href);
     hashs.push(decodeURIComponent(url.hash));
-    element.addEventListener('click', onLinkClick);
-  });
-  document.querySelectorAll('.header-anchor').forEach(function (element) {
-    element.addEventListener('click', onLinkClick);
   });
 
   window.addEventListener('hashchange', onHashChange);
@@ -21,13 +17,6 @@ window.addEventListener('load', function () {
   scrollToHash(location.hash);
 });
 
-function onLinkClick(e) {
-  e.preventDefault();
-  const url = new URL(e.target.href);
-  history.pushState({}, '', url.hash);
-  scrollToHash(url.hash);
-}
-
 function onHashChange(e) {
   e.preventDefault();
   scrollToHash(location.hash);
@@ -38,14 +27,11 @@ function scrollToHash(hash) {
   if (id) {
     const element = document.querySelector(`#${id}`);
     if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth',
-      });
+      element.scrollIntoView();
     }
   } else {
     document.querySelector('article').scrollTo({
       top: 0,
-      behavior: 'smooth',
     });
   }
 }
