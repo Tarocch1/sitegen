@@ -19,9 +19,9 @@
     <link rel="stylesheet" href="./assets/css/index.css" />
   </head>
   <body>
-    <section>
+    <section class="layout-section">
       {{#if toc}}
-      <aside>
+      <aside class="layout-aside">
         {{#each toc}} {{#with this}}
         <div>
           <a class="level-{{ level }}" href="#{{ id }}" title="{{ title }}">
@@ -31,11 +31,11 @@
         {{/with}} {{/each}}
       </aside>
       {{/if}}
-      <article>
-        <main>
+      <article class="layout-article">
+        <main class="layout-main">
           <div class="wysiwyg">{{{html}}}</div>
         </main>
-        <footer>
+        <footer class="layout-footer">
           {{#if time}}
           <div class="time">{{time}}</div>
           {{/if}}
@@ -60,6 +60,7 @@
       });
     </script>
     {{/if}}
+    <script type="module" src="./assets/js/index.js"></script>
     <script type="module" src="./assets/js/mermaid.js"></script>
   </body>
 </html>

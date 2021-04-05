@@ -4,7 +4,8 @@
 
 aside a {
   display: inline-block;
-  padding: 0.35rem 0;
+  padding: 0.35rem 1rem 0.35rem 2rem;
+  border-left: 0.25rem solid transparent;
   width: 100%;
   overflow-x: hidden;
   white-space: nowrap;
@@ -17,23 +18,28 @@ aside a:hover {
   color: #2478ff;
 }
 
-.level-h1 {
-  padding-left: 0;
+aside a.active {
+  border-left-color: #2478ff;
+  color: #2478ff;
 }
-.level-h2 {
+
+.level-h1 {
   padding-left: 1rem;
 }
-.level-h3 {
+.level-h2 {
   padding-left: 2rem;
 }
-.level-h4 {
+.level-h3 {
   padding-left: 3rem;
 }
-.level-h5 {
+.level-h4 {
   padding-left: 4rem;
 }
-.level-h6 {
+.level-h5 {
   padding-left: 5rem;
+}
+.level-h6 {
+  padding-left: 6rem;
 }
 
 .time {
