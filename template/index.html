@@ -20,29 +20,27 @@
     <link rel="stylesheet" href="./assets/css/index.css" />
   </head>
   <body>
-    <section class="layout-section">
-      {{#if toc}}
-      <aside class="layout-aside">
-        {{#each toc}} {{#with this}}
-        <div>
-          <a class="level-{{ level }}" href="#{{ id }}" title="{{ title }}">
-            {{ title }}
-          </a>
-        </div>
-        {{/with}} {{/each}}
-      </aside>
-      {{/if}}
+    {{#if toc}}
+    <aside class="layout-aside">
+      {{#each toc}} {{#with this}}
+      <div>
+        <a class="level-{{level}}" href="#{{id}}" title="{{title}}">
+          {{title}}
+        </a>
+      </div>
+      {{/with}} {{/each}}
+    </aside>
+    {{/if}}
+    <main class="layout-main">
       <article class="layout-article">
-        <main class="layout-main">
-          <div class="wysiwyg">{{{html}}}</div>
-        </main>
-        <footer class="layout-footer">
-          {{#if time}}
-          <div class="time">{{time}}</div>
-          {{/if}}
-        </footer>
+        <div class="wysiwyg">{{{html}}}</div>
       </article>
-    </section>
+      <footer class="layout-footer">
+        {{#if time}}
+        <time>{{time}}</time>
+        {{/if}}
+      </footer>
+    </main>
     {{#if hot}}
     <script>
       let pathname = window.location.pathname;

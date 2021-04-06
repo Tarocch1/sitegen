@@ -1,45 +1,29 @@
-body {
-  margin: 0;
-  font-size: 15px;
-}
-
-.layout-section {
-  display: flex;
-  flex: auto;
-}
-
 .layout-aside {
   display: none;
-  flex: 0 0 300px;
   width: 300px;
-  max-width: 300px;
-  min-width: 300px;
   height: 100vh;
   overflow-y: auto;
   padding: 32px 0;
   border-right: 1px solid #eaecef;
+  position: fixed;
+  left: 0;
 }
 
-.layout-article {
-  flex: auto;
-  height: 100vh;
-  overflow-y: auto;
+.layout-main {
   padding: 32px 16px;
 }
 
-.layout-main,
+.layout-article,
 .layout-footer {
-  width: 100%;
   max-width: 1000px;
   margin: auto;
-}
-
-.layout-footer {
-  margin-top: 40px;
 }
 
 @media screen and (min-width: 1332px) {
   .layout-aside {
     display: block;
+  }
+  .layout-aside + .layout-main {
+    margin-left: 300px;
   }
 }

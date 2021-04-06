@@ -4,42 +4,18 @@ const hashs = [];
 
 window.addEventListener('load', function () {
   document.querySelectorAll('aside a').forEach(function (element) {
-    const url = new URL(element.href);
-    hashs.push(decodeURIComponent(url.hash));
+    hashs.push(decodeURIComponent(element.hash));
   });
 
-  window.addEventListener('hashchange', onHashChange);
+  window.addEventListener('scroll', debounce(activeAsideLink, 200));
 
-  document
-    .querySelector('article')
-    .addEventListener('scroll', debounce(activeLink, 200));
-
-  scrollToHash(location.hash);
+  activeAsideLink();
 });
 
-function onHashChange(e) {
-  e.preventDefault();
-  scrollToHash(location.hash);
-}
-
-function scrollToHash(hash) {
-  const id = decodeURIComponent(hash.replace(/^#/, ''));
-  if (id) {
-    const element = document.querySelector(`#${id}`);
-    if (element) {
-      element.scrollIntoView();
-    }
-  } else {
-    document.querySelector('article').scrollTo({
-      top: 0,
-    });
-  }
-}
-
-function activeLink() {
+function activeAsideLink() {
   let cur = '';
   for (const hash of hashs) {
-    if (elementInView(document.querySelector(hash))) {
+    if (elementUnderTopEdge(document.querySelector(hash))) {
       break;
     }
     cur = hash;
@@ -52,6 +28,6 @@ function activeLink() {
   }
 }
 
-function elementInView(element) {
+function elementUnderTopEdge(element) {
   return element.getBoundingClientRect().top > 0;
 }
