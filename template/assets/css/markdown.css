@@ -4,7 +4,9 @@
 .wysiwyg h4 .header-anchor,
 .wysiwyg h5 .header-anchor,
 .wysiwyg h6 .header-anchor {
-  opacity: 0;
+  display: none;
+  margin-bottom: -1px;
+  margin-left: 8px;
 }
 .wysiwyg h1:hover .header-anchor,
 .wysiwyg h2:hover .header-anchor,
@@ -12,7 +14,14 @@
 .wysiwyg h4:hover .header-anchor,
 .wysiwyg h5:hover .header-anchor,
 .wysiwyg h6:hover .header-anchor {
-  opacity: 1;
+  display: inline-block;
+}
+.wysiwyg kbd {
+  color: #333333;
+  background-color: #fafbfc;
+  border: 1px solid #d1d5da;
+  border-radius: 6px;
+  box-shadow: inset 0 -1px 0 #d1d5da;
 }
 .wysiwyg pre code {
   padding: 0;
@@ -26,12 +35,27 @@
   padding-left: 0;
 }
 .wysiwyg details {
-  margin-bottom: 2.8em;
+  margin-bottom: 1.4em;
+  border: 1px solid #e6e6e6;
 }
 .wysiwyg details:last-child {
   margin-bottom: 0;
 }
+.wysiwyg summary {
+  padding: 0.7em;
+  background: whitesmoke;
+  user-select: none;
+  outline: none;
+}
+.wysiwyg details > div {
+  padding: 0.7em;
+  border-top: 1px solid #e6e6e6;
+}
+.wysiwyg details > div > *:first-child {
+  margin-top: 0;
+}
 .wysiwyg .mermaid {
+  text-align: center;
   margin-bottom: 1.4em;
   width: 100%;
   overflow-x: auto;
