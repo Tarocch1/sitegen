@@ -63,3 +63,6 @@
 .wysiwyg .mermaid:last-child {
   margin-bottom: 0;
 }
+.wysiwyg .katex-display {
+  margin: 0;
+}
