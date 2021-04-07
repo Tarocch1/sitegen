@@ -3,6 +3,7 @@ const dayjs = require('dayjs');
 module.exports = {
   title: '', // Title for the site.
   description: '', // Description for the site.
+  copyright: '', // Copyright for the site.
   publicDir: 'public', // Public dir path.
   markdown: {
     lineNumbers: false, // Whether to show line numbers to the left of each code blocks.

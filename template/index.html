@@ -22,22 +22,22 @@
   <body>
     {{#if toc}}
     <aside class="layout-aside">
-      {{#each toc}} {{#with this}}
-      <div>
+      <nav>
+        {{#each toc}} {{#with this}}
         <a class="level-{{level}}" href="#{{id}}" title="{{title}}">
           {{title}}
         </a>
-      </div>
-      {{/with}} {{/each}}
+        {{/with}} {{/each}}
+      </nav>
     </aside>
     {{/if}}
-    <main class="layout-main">
-      <article class="layout-article">
-        <div class="wysiwyg">{{{html}}}</div>
-      </article>
+    <main class="layout-main" role="main">
+      <article class="layout-article wysiwyg">{{{html}}}</article>
       <footer class="layout-footer">
         {{#if time}}
         <time>{{time}}</time>
+        {{/if}} {{#if copyright}}
+        <p class="copyright">{{copyright}}</p>
         {{/if}}
       </footer>
     </main>
