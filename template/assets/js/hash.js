@@ -29,5 +29,5 @@ function activeAsideLink() {
 }
 
 function elementUnderTopEdge(element) {
-  return element.getBoundingClientRect().top > 0;
+  return element.getBoundingClientRect().top > 1;
 }
