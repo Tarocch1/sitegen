@@ -1,3 +1,9 @@
 import mermaid from 'mermaid';
 
-mermaid.initialize(_MERMAID_CONFIG_);
+function initMermaid() {
+  if (mermaid) {
+    mermaid.initialize(_MERMAID_CONFIG_);
+  }
+}
+
+export { initMermaid };

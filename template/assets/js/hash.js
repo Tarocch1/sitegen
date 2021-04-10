@@ -1,8 +1,8 @@
-import { debounce } from 'lodash';
+import { debounce } from 'lodash-es';
 
 const hashs = [];
 
-window.addEventListener('load', function () {
+function initHash() {
   document.querySelectorAll('aside a').forEach(function (element) {
     hashs.push(decodeURIComponent(element.hash));
   });
@@ -12,7 +12,7 @@ window.addEventListener('load', function () {
   document.querySelector('main').addEventListener('scroll', onScroll);
 
   scrollToHash(decodeURIComponent(location.hash));
-});
+}
 
 function onHashChange(e) {
   e.preventDefault();
@@ -52,3 +52,5 @@ function scrollToHash(hash) {
 function elementUnderTopEdge(element) {
   return element.getBoundingClientRect().top > 57;
 }
+
+export { initHash };
