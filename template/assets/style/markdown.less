@@ -144,7 +144,7 @@
 
     .header-anchor {
       display: none;
-      margin-left: 8px;
+      margin-left: @unit;
       margin-bottom: -1px;
     }
 
@@ -179,7 +179,7 @@
 
   ol,
   ul {
-    padding-left: @margin;
+    padding-left: @margin * 1.5;
     list-style-position: outside;
   }
 
@@ -232,7 +232,7 @@
   }
 
   blockquote {
-    padding: 0.6em 1.2em;
+    padding: 0.5em 1em;
     border-left: 4px solid @color-dividers;
     margin-left: 0;
     color: @color-secondry-text;
@@ -248,14 +248,12 @@
     max-width: 100%;
     border-spacing: 0;
     border-collapse: collapse;
-    margin-left: auto;
-    margin-right: auto;
     overflow: auto;
 
     th,
     td {
       .cell(1);
-      border: 1px solid @color-border;
+      border: 1px solid @gray-5;
     }
 
     thead,
@@ -282,30 +280,35 @@
   figure {
     text-align: center;
 
-    & > * {
+    & > *:nth-last-child(2) {
       margin-bottom: 0;
     }
 
+    table {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
     figcaption {
-      margin-top: 0.4em;
+      margin-top: 0.5em;
       font-size: 0.8em;
       color: @color-secondry-text;
     }
   }
 
   details {
-    border: 1px solid @color-border;
+    border: 1px solid @gray-5;
 
     summary {
-      padding: 0.7em;
+      .cell(1);
       background-color: @color-table-header;
       outline: none;
       user-select: none;
     }
 
     & > div {
-      padding: 0.7em;
-      border-top: 1px solid @color-border;
+      .cell(1);
+      border-top: 1px solid @gray-5;
     }
   }
 
