@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="./assets/style/index.less" />
   </head>
   <body>
+    <header class="layout-header">
+      <a class="home-link" href="{{base}}"><span>{{siteTitle}}</span></a>
+    </header>
     {{#if toc}}
     <aside class="layout-aside">
       <nav>
@@ -25,8 +28,8 @@
     {{/if}}
     <main class="layout-main" role="main">
       <div class="layout-container">
-        <article class="markdown">{{{html}}}</article>
-        <footer>
+        <article class="layout-article markdown">{{{html}}}</article>
+        <footer class="layout-footer">
           {{#if time}}
           <time class="time">{{time}}</time>
           {{/if}} {{#if copyright}}

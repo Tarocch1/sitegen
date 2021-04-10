@@ -7,10 +7,17 @@ window.addEventListener('load', function () {
     hashs.push(decodeURIComponent(element.hash));
   });
 
-  window.addEventListener('scroll', debounce(activeAsideLink, 200));
+  window.addEventListener('hashchange', onHashChange);
 
-  activeAsideLink();
+  document.querySelector('main').addEventListener('scroll', onScroll);
+
+  scrollToHash(decodeURIComponent(location.hash));
 });
+
+function onHashChange(e) {
+  e.preventDefault();
+  scrollToHash(decodeURIComponent(location.hash));
+}
 
 function activeAsideLink() {
   let cur = '';
@@ -28,6 +35,20 @@ function activeAsideLink() {
   }
 }
 
+const onScroll = debounce(activeAsideLink, 200);
+
+function scrollToHash(hash) {
+  const id = hash.replace(/^#/, '');
+  if (id) {
+    const element = document.querySelector(hash);
+    if (element) {
+      element.scrollIntoView();
+    }
+  } else {
+    document.querySelector('main').scrollTo(0, 0);
+  }
+}
+
 function elementUnderTopEdge(element) {
-  return element.getBoundingClientRect().top > 1;
+  return element.getBoundingClientRect().top > 57;
 }

@@ -15,16 +15,42 @@ body {
   background-color: @gray-1;
 }
 
+a {
+  text-decoration: none;
+}
+
 .layout {
+  @header-height: 56px;
   @aside-width: 300px;
   @container-max-width: 1000px;
+
+  &-header {
+    z-index: 1000;
+    height: @header-height;
+    padding: @unit 1.4em;
+    border-bottom: 1px solid @color-border;
+    background-color: @gray-1;
+    line-height: @header-height - (@unit * 2);
+
+    .home-link {
+      display: inline-block;
+      max-width: 100%;
+      font-size: 1.5em;
+      font-weight: @weight-strong;
+      color: @color-primary-text;
+      white-space: nowrap;
+      overflow-x: hidden;
+      text-overflow: ellipsis;
+    }
+  }
 
   &-aside {
     display: none;
     position: fixed;
+    top: @header-height;
     left: 0;
     width: @aside-width;
-    height: 100vh;
+    height: calc(100vh - @header-height);
     padding: @unit * 3 0;
     border-right: 1px solid @color-border;
     overflow-y: auto;
@@ -33,12 +59,11 @@ body {
       display: block;
       width: 100%;
       padding: 0.4em 1em;
-      border-left: 0.35em solid transparent;
+      border-left: 0.4em solid transparent;
       color: @color-primary-text;
       white-space: nowrap;
       overflow-x: hidden;
       text-overflow: ellipsis;
-      text-decoration: none;
 
       &:hover {
         color: @blue;
@@ -71,11 +96,16 @@ body {
   }
 
   &-main {
+    height: calc(100vh - @header-height);
     padding: @unit * 3 @unit * 2;
+    overflow-y: auto;
   }
 
   &-container {
+    display: flex;
+    flex-direction: column;
     max-width: @container-max-width;
+    min-height: 100%;
     margin: auto;
   }
 
@@ -88,22 +118,30 @@ body {
       margin-left: @aside-width;
     }
   }
-}
 
-.time {
-  display: block;
-  margin: 2em 0 0;
-  font-size: 0.75em;
-  font-style: italic;
-  color: @color-secondry-text;
-  text-align: right;
-}
+  &-article {
+    flex: 1 0;
+  }
 
-.copyright {
-  margin: 2em 0 0;
-  font-size: 0.75em;
-  color: @color-secondry-text;
-  text-align: center;
+  &-footer {
+    flex: 0 0;
+
+    .time {
+      display: block;
+      margin: 2em 0 0;
+      font-size: 0.75em;
+      font-style: italic;
+      color: @color-secondry-text;
+      text-align: right;
+    }
+
+    .copyright {
+      margin: 2em 0 0;
+      font-size: 0.75em;
+      color: @color-secondry-text;
+      text-align: center;
+    }
+  }
 }
 
 @import 'prismjs/themes/prism.css';
