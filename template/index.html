@@ -11,9 +11,8 @@
     <title>{{title}}</title>
     <link rel="stylesheet" href="./assets/style/index.less" />
   </head>
-  <body>
-    <header class="layout-header {{#if toc}}has-aside{{/if}}">
-      {{#if toc}}
+  <body class="{{#if toc}}has-aside{{/if}}">
+    <header class="layout-header">
       <div class="aside-btton">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -27,10 +26,8 @@
           ></path>
         </svg>
       </div>
-      {{/if}}
       <a class="home-link" href="{{base}}"><span>{{siteTitle}}</span></a>
     </header>
-    {{#if toc}}
     <aside class="layout-aside">
       <nav>
         {{#each toc}} {{#with this}}
@@ -41,7 +38,6 @@
       </nav>
     </aside>
     <div class="aside-mask"></div>
-    {{/if}}
     <main class="layout-main" role="main">
       <div class="layout-container">
         <article class="layout-article markdown">{{{html}}}</article>

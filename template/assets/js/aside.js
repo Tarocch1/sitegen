@@ -1,26 +1,19 @@
 function initAside() {
   const asideBtn = document.querySelector('.aside-btton');
-  if (asideBtn) {
-    asideBtn.addEventListener('click', openAside);
-  }
+  asideBtn.addEventListener('click', toggleAside);
+
   const asideMask = document.querySelector('.aside-mask');
-  if (asideMask) {
-    asideMask.addEventListener('click', closeAside);
-  }
+  asideMask.addEventListener('click', closeAside);
 }
 
-function openAside() {
+function toggleAside() {
   const aside = document.querySelector('aside');
-  if (aside) {
-    aside.classList.add('open');
-  }
+  aside.classList.toggle('open');
 }
 
 function closeAside() {
   const aside = document.querySelector('aside');
-  if (aside) {
-    aside.classList.remove('open');
-  }
+  aside.classList.remove('open');
 }
 
 export { initAside };
