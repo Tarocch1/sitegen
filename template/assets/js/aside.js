@@ -1,5 +1,5 @@
 function initAside() {
-  const asideBtn = document.querySelector('.aside-btton');
+  const asideBtn = document.querySelector('.aside-button');
   asideBtn.addEventListener('click', toggleAside);
 
   const asideMask = document.querySelector('.aside-mask');

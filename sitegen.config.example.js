@@ -5,9 +5,16 @@ module.exports = {
   description: '', // Description for the site.
   copyright: '', // Copyright for the site.
   publicDir: 'public', // Public dir path.
+  links: [
+    // Navigation bar links
+    {
+      name: 'GirHub',
+      url: 'https://github.com/Tarocch1',
+    },
+  ],
   markdown: {
     lineNumbers: false, // Whether to show line numbers to the left of each code blocks.
-    timeFormatter: time => dayjs(time).format('YYYY-MM-DD HH:mm:ss'), // Formatter for the time at the bottom of the page.
+    timeFormatter: (time) => dayjs(time).format('YYYY-MM-DD HH:mm:ss'), // Formatter for the time at the bottom of the page.
     toc: [2, 3], // Headings levels to use in toc.
     mermaid: {
       // Config for mermaid. See https://mermaid-js.github.io/mermaid/#/Setup?id=configuration.

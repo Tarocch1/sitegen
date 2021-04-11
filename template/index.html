@@ -11,9 +11,9 @@
     <title>{{title}}</title>
     <link rel="stylesheet" href="./assets/style/index.less" />
   </head>
-  <body class="{{#if toc}}has-aside{{/if}}">
+  <body class="{{#if links}}has-links{{/if}} {{#if toc}}has-toc{{/if}}">
     <header class="layout-header">
-      <div class="aside-btton">
+      <div class="aside-button">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           aria-hidden="true"
@@ -27,15 +27,40 @@
         </svg>
       </div>
       <a class="home-link" href="{{base}}"><span>{{siteTitle}}</span></a>
+      <nav>
+        {{#each links}} {{#if external}}
+        <a href="{{url}}" target="_blank" rel="noopener noreferrer">
+          {{name}}
+        </a>
+        {{else}}
+        <a class="{{#if active}}active{{/if}}" href="{{../base}}{{url}}">
+          {{name}}
+        </a>
+        {{/if}} {{/each}}
+      </nav>
     </header>
     <aside class="layout-aside">
       <nav>
-        {{#each toc}} {{#with this}}
-        <a class="level-{{level}}" href="#{{id}}" title="{{title}}">
-          {{title}}
+        {{#each links}} {{#if external}}
+        <a href="{{url}}" target="_blank" rel="noopener noreferrer">
+          {{name}}
         </a>
-        {{/with}} {{/each}}
+        {{else}}
+        <a class="{{#if active}}active{{/if}}" href="{{../base}}{{url}}">
+          {{name}}
+        </a>
+        {{/if}} {{/each}}
       </nav>
+      <hr />
+      <ul>
+        {{#each toc}}
+        <li>
+          <a class="level-{{level}}" href="#{{id}}" title="{{title}}">
+            {{title}}
+          </a>
+        </li>
+        {{/each}}
+      </ul>
     </aside>
     <div class="aside-mask"></div>
     <main class="layout-main" role="main">

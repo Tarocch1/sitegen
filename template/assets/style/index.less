@@ -20,21 +20,18 @@ a {
 }
 
 .layout-header {
+  display: flex;
+  align-items: center;
   z-index: 1000;
   position: relative;
   height: @header-height;
   padding: @unit 1.4em;
   border-bottom: 1px solid @color-border;
   background-color: @gray-1;
-  line-height: @header-height - (@unit * 2);
 
-  .aside-btton {
+  .aside-button {
     display: none;
-    position: absolute;
-    top: calc((@header-height - 1.5em) / 2);
-    left: 1.4em;
-    width: 1.5em;
-    height: 1.5em;
+    margin-right: 1em;
     cursor: pointer;
 
     svg {
@@ -45,14 +42,38 @@ a {
   }
 
   .home-link {
-    display: inline-block;
-    max-width: 100%;
+    flex: 1;
     font-size: 1.5em;
     font-weight: @weight-strong;
     color: @color-primary-text;
     white-space: nowrap;
     overflow-x: hidden;
     text-overflow: ellipsis;
+  }
+
+  nav {
+    line-height: 2em;
+    overflow-x: hidden;
+
+    a {
+      display: inline-block;
+      position: relative;
+      margin-left: 1.5rem;
+      font-size: 1.1em;
+      font-weight: @weight-strong;
+      color: @color-primary-text;
+
+      &.active::after,
+      &:hover::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        background-color: @blue;
+      }
+    }
   }
 }
 
@@ -70,42 +91,77 @@ a {
   transform: translateX(-100%);
   transition: transform 0.2s ease;
 
-  nav a {
-    display: block;
-    width: 100%;
-    padding: 0.4em 1em;
-    border-left: 0.4em solid transparent;
-    color: @color-primary-text;
-    white-space: nowrap;
-    overflow-x: hidden;
-    text-overflow: ellipsis;
+  nav {
+    display: none;
 
-    &:hover {
-      color: @blue;
-    }
+    a {
+      display: block;
+      width: 100%;
+      padding: 0.4rem 1.4rem;
+      font-size: 1.1em;
+      font-weight: @weight-strong;
+      color: @color-primary-text;
+      white-space: nowrap;
+      overflow-x: hidden;
+      text-overflow: ellipsis;
 
-    &.active {
-      border-left-color: @blue;
-      color: @blue;
+      &.active {
+        color: @blue;
+      }
     }
+  }
 
-    &.level-h1 {
-      padding-left: 1em;
-    }
-    &.level-h2 {
-      padding-left: 2em;
-    }
-    &.level-h3 {
-      padding-left: 3em;
-    }
-    &.level-h4 {
-      padding-left: 4em;
-    }
-    &.level-h5 {
-      padding-left: 5em;
-    }
-    &.level-h6 {
-      padding-left: 6em;
+  hr {
+    display: none;
+    height: 1px;
+    border: none;
+    margin-top: 1.4em;
+    margin-bottom: 1.4em;
+    background-color: @color-dividers;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+
+    a {
+      display: block;
+      width: 100%;
+      padding: 0.4em 1em;
+      border-left: 0.4em solid transparent;
+      color: @color-primary-text;
+      white-space: nowrap;
+      overflow-x: hidden;
+      text-overflow: ellipsis;
+
+      &:hover {
+        color: @blue;
+      }
+
+      &.active {
+        border-left-color: @blue;
+        color: @blue;
+      }
+
+      &.level-h1 {
+        padding-left: 1em;
+      }
+      &.level-h2 {
+        padding-left: 2em;
+      }
+      &.level-h3 {
+        padding-left: 3em;
+      }
+      &.level-h4 {
+        padding-left: 4em;
+      }
+      &.level-h5 {
+        padding-left: 5em;
+      }
+      &.level-h6 {
+        padding-left: 6em;
+      }
     }
   }
 }
@@ -158,7 +214,7 @@ a {
   }
 }
 
-.has-aside {
+.has-toc {
   .layout-aside {
     transform: translateX(0);
   }
@@ -169,11 +225,10 @@ a {
 }
 
 @media (max-width: @container-max-width + @unit * 4 + @aside-width) {
-  .has-aside {
+  .has-links,
+  .has-toc {
     .layout-header {
-      padding-left: 1.4em + 1.5em + 1em;
-
-      .aside-btton {
+      .aside-button {
         display: block;
       }
     }
@@ -193,6 +248,26 @@ a {
 
     .layout-main {
       margin-left: 0;
+    }
+  }
+
+  .has-links.has-toc {
+    .layout-aside {
+      hr {
+        display: block;
+      }
+    }
+  }
+
+  .layout-header {
+    nav {
+      display: none;
+    }
+  }
+
+  .layout-aside {
+    nav {
+      display: block;
     }
   }
 }
