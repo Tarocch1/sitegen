@@ -1,19 +1,14 @@
 function initAside() {
   const asideBtn = document.querySelector('.aside-button');
-  asideBtn.addEventListener('click', toggleAside);
+  asideBtn.addEventListener('click', operateAside.bind(window, 'toggle'));
 
   const asideMask = document.querySelector('.aside-mask');
-  asideMask.addEventListener('click', closeAside);
+  asideMask.addEventListener('click', operateAside.bind(window, 'remove'));
 }
 
-function toggleAside() {
+function operateAside(operate) {
   const aside = document.querySelector('aside');
-  aside.classList.toggle('open');
-}
-
-function closeAside() {
-  const aside = document.querySelector('aside');
-  aside.classList.remove('open');
+  aside.classList[operate]('open');
 }
 
 export { initAside };

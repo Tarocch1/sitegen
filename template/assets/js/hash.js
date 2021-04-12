@@ -11,12 +11,12 @@ function initHash() {
 
   document.querySelector('main').addEventListener('scroll', onScroll);
 
-  scrollToHash(decodeURIComponent(location.hash));
+  scrollToHash(location.hash);
 }
 
 function onHashChange(e) {
   e.preventDefault();
-  scrollToHash(decodeURIComponent(location.hash));
+  scrollToHash(location.hash);
 }
 
 function activeAsideLink() {
@@ -38,7 +38,7 @@ function activeAsideLink() {
 const onScroll = debounce(activeAsideLink, 200);
 
 function scrollToHash(hash) {
-  const id = hash.replace(/^#/, '');
+  const id = decodeURIComponent(hash).replace(/^#/, '');
   if (id) {
     const element = document.querySelector(hash);
     if (element) {
