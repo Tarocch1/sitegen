@@ -43,13 +43,16 @@ a {
 
   .home-link {
     flex: 1;
-    font-size: 1.3em;
-    font-weight: @weight-strong;
-    color: @color-primary-text;
-    line-height: 2rem;
+    line-height: 2em;
     white-space: nowrap;
     overflow-x: hidden;
     text-overflow: ellipsis;
+
+    a {
+      font-size: 1.3em;
+      font-weight: @weight-strong;
+      color: @color-primary-text;
+    }
   }
 
   nav {
