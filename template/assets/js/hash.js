@@ -38,7 +38,8 @@ function activeAsideLink() {
 const onScroll = debounce(activeAsideLink, 200);
 
 function scrollToHash(hash) {
-  const id = decodeURIComponent(hash).replace(/^#/, '');
+  hash = decodeURIComponent(hash);
+  const id = hash.replace(/^#/, '');
   if (id) {
     const element = document.querySelector(hash);
     if (element) {
