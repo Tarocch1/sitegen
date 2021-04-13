@@ -3,7 +3,7 @@ import { debounce } from 'lodash-es';
 const hashs = [];
 
 function initHash() {
-  document.querySelectorAll('aside a').forEach(function (element) {
+  document.querySelectorAll('aside ul a').forEach(function (element) {
     hashs.push(decodeURIComponent(element.hash));
   });
 
