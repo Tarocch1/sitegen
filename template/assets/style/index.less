@@ -26,14 +26,14 @@ a {
   z-index: 1000;
   position: relative;
   height: @header-height;
-  padding: @unit 1.4em;
+  padding: 0 @unit * 2;
   border-bottom: 1px solid @color-border;
   background-color: @gray-1;
   line-height: 2;
 
   .aside-button {
     display: none;
-    margin-right: 1em;
+    margin-right: @unit;
     cursor: pointer;
 
     svg {
@@ -61,7 +61,7 @@ a {
 
     a {
       display: inline-block;
-      margin-left: 1.5rem;
+      margin-left: @unit * 2;
       font-size: 1.1em;
       font-weight: @weight-strong;
       color: @color-primary-text;
@@ -95,7 +95,7 @@ a {
     a {
       display: block;
       width: 100%;
-      padding: 0.4rem 1.4rem;
+      padding: @unit * 0.75 @unit * 2;
       font-size: 1.1em;
       font-weight: @weight-strong;
       color: @color-primary-text;
@@ -113,8 +113,7 @@ a {
     display: none;
     height: 1px;
     border: none;
-    margin-top: 1.4em;
-    margin-bottom: 1.4em;
+    margin: @unit * 3 0;
     background-color: @color-dividers;
   }
 
@@ -126,8 +125,8 @@ a {
     a {
       display: block;
       width: 100%;
-      padding: 0.4em 1em;
-      border-left: 0.4em solid transparent;
+      padding: @unit * 0.75 @unit * 2;
+      border-left: @unit * 0.5 solid transparent;
       color: @color-primary-text;
       white-space: nowrap;
       overflow-x: hidden;
@@ -143,22 +142,22 @@ a {
       }
 
       &.level-h1 {
-        padding-left: 1em;
+        padding-left: @unit * 1.5;
       }
       &.level-h2 {
-        padding-left: 2em;
+        padding-left: @unit * 3.5;
       }
       &.level-h3 {
-        padding-left: 3em;
+        padding-left: @unit * 5.5;
       }
       &.level-h4 {
-        padding-left: 4em;
+        padding-left: @unit * 7.5;
       }
       &.level-h5 {
-        padding-left: 5em;
+        padding-left: @unit * 9.5;
       }
       &.level-h6 {
-        padding-left: 6em;
+        padding-left: @unit * 11.5;
       }
     }
   }
@@ -197,7 +196,7 @@ a {
 
   .time {
     display: block;
-    margin: 2em 0 0;
+    margin: @unit * 3 0 0;
     font-size: 0.75em;
     font-style: italic;
     color: @color-secondry-text;
@@ -205,7 +204,7 @@ a {
   }
 
   .copyright {
-    margin: 2em 0 0;
+    margin: @unit * 3 0 0;
     font-size: 0.75em;
     color: @color-secondry-text;
     text-align: center;
