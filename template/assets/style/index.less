@@ -28,6 +28,7 @@ a {
   padding: @unit 1.4em;
   border-bottom: 1px solid @color-border;
   background-color: @gray-1;
+  line-height: 2;
 
   .aside-button {
     display: none;
@@ -43,7 +44,6 @@ a {
 
   .home-link {
     flex: 1;
-    line-height: 2em;
     white-space: nowrap;
     overflow-x: hidden;
     text-overflow: ellipsis;
@@ -56,7 +56,6 @@ a {
   }
 
   nav {
-    line-height: 2em;
     overflow-x: hidden;
 
     a {
@@ -69,6 +68,7 @@ a {
       &.active,
       &:hover {
         border-bottom: 2px solid @blue;
+        margin-top: 2px;
       }
     }
   }
