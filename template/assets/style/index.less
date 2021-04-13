@@ -7,6 +7,7 @@
 
 html,
 body {
+  height: 100%;
   padding: 0;
   margin: 0;
   font-size: @font-size;
@@ -80,7 +81,7 @@ a {
   top: @header-height;
   left: 0;
   width: @aside-width;
-  height: calc(100vh - @header-height);
+  height: calc(100% - @header-height);
   padding: @unit * 3 0;
   border-right: 1px solid @color-border;
   background-color: @gray-1;
@@ -170,11 +171,11 @@ a {
   top: @header-height;
   left: 0;
   width: 100vw;
-  height: calc(100vh - @header-height);
+  height: calc(100% - @header-height);
 }
 
 .layout-main {
-  height: calc(100vh - @header-height);
+  height: calc(100% - @header-height);
   padding: @unit * 3 @unit * 2;
   overflow-y: auto;
 }
