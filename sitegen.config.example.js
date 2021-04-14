@@ -13,7 +13,6 @@ module.exports = {
     },
   ],
   markdown: {
-    lineNumbers: false, // Whether to show line numbers to the left of each code blocks.
     timeFormatter: (time) => dayjs(time).format('YYYY-MM-DD HH:mm:ss'), // Formatter for the time at the bottom of the page.
     toc: [2, 3], // Headings levels to use in toc.
     mermaid: {
