@@ -20,7 +20,7 @@
     "sitegen": "./bin/sitegen.js"
   },
   "scripts": {
-    "dev": "npx ./bin/sitegen.js dev",
+    "start": "npx ./bin/sitegen.js start",
     "build": "npx ./bin/sitegen.js build"
   },
   "dependencies": {
