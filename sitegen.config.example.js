@@ -19,7 +19,7 @@ module.exports = {
       // Config for mermaid. See https://mermaid-js.github.io/mermaid/#/Setup?id=configuration.
       startOnLoad: true,
     },
-    katex: {},
+    katex: {}, // Config for katex. See https://katex.org/docs/options.html.
   },
   build: {
     distDir: 'dist', // Build dist path.
