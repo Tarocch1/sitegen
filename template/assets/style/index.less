@@ -34,13 +34,8 @@ a {
   .aside-button {
     display: none;
     margin-right: @unit;
+    font-size: 2em;
     cursor: pointer;
-
-    svg {
-      display: block;
-      width: 20px;
-      height: 20px;
-    }
   }
 
   .home-link {
@@ -267,6 +262,23 @@ a {
       display: block;
     }
   }
+}
+
+.iconfont {
+  font-family: 'iconfont' !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+  font-family: 'iconfont';
+  src: url('../font/iconfont.eot');
+  src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'),
+    url('../font/iconfont.woff2') format('woff2'),
+    url('../font/iconfont.woff') format('woff'),
+    url('../font/iconfont.ttf') format('truetype'),
+    url('../font/iconfont.svg#iconfont') format('svg');
 }
 
 @import 'prismjs/themes/prism.css';
