@@ -23,8 +23,8 @@ Options:
   -h, --help              display help for command
 
 Commands:
-  dev [options] [path]    start local dev server
-  build [options] [path]  build all files to dist folder
+  start [options] [root]  start local dev server
+  build [options] [root]  build all files to dist folder
   help [command]          display help for command
 ```
 
