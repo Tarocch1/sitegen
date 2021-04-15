@@ -1,3 +1,4 @@
+@plugin './plugins/elevation.js';
 @import './var.less';
 @import 'normalize.css/normalize.css';
 
@@ -30,6 +31,7 @@ a {
   border-bottom: 1px solid @color-border;
   background-color: @gray-1;
   line-height: 2;
+  box-shadow: elevation(2);
 
   .aside-button {
     display: none;
@@ -84,6 +86,7 @@ a {
   overflow-y: auto;
   transform: translateX(-100%);
   transition: transform 0.2s ease;
+  box-shadow: none;
 
   nav {
     display: none;
@@ -210,6 +213,7 @@ a {
 .has-toc {
   .layout-aside {
     transform: translateX(0);
+    box-shadow: elevation(2);
   }
 
   .layout-main {
@@ -229,9 +233,11 @@ a {
     .layout-aside {
       width: @mobile-aside-width;
       transform: translateX(-100%);
+      box-shadow: none;
 
       &.open {
         transform: translateX(0);
+        box-shadow: elevation(2);
 
         & + .aside-mask {
           display: block;
@@ -281,6 +287,15 @@ a {
     url('../font/iconfont.ttf') format('truetype'),
     url('../font/iconfont.svg#iconfont') format('svg');
 }
+
+.elevation(@n, @i: 1) when (@i <= @n) {
+  .elevation-@{i} {
+    box-shadow: elevation(@i);
+  }
+  .elevation(@n, (@i + 1));
+}
+
+.elevation(24);
 
 @import 'prismjs/themes/prism.css';
 @import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
