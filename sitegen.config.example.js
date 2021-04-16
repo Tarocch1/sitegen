@@ -5,6 +5,7 @@ module.exports = {
   description: '', // Description for the site.
   copyright: '', // Copyright for the site.
   publicDir: 'public', // Public dir path.
+  head: '<script src=""></script>', // Custom header.
   links: [
     // Navigation bar links
     {
