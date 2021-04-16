@@ -34,10 +34,17 @@ a {
 
   .aside-button {
     display: none;
+    width: 1em;
+    height: 1em;
     margin-right: @unit;
-    font-size: 2em;
+    font-size: 1.6em;
     line-height: 1;
     cursor: pointer;
+
+    svg.feather {
+      width: 100%;
+      height: 100%;
+    }
   }
 
   .home-link {
@@ -268,23 +275,6 @@ a {
       display: block;
     }
   }
-}
-
-.iconfont {
-  font-family: 'iconfont' !important;
-  font-style: normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-@font-face {
-  font-family: 'iconfont';
-  src: url('../font/iconfont.eot');
-  src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'),
-    url('../font/iconfont.woff2') format('woff2'),
-    url('../font/iconfont.woff') format('woff'),
-    url('../font/iconfont.ttf') format('truetype'),
-    url('../font/iconfont.svg#iconfont') format('svg');
 }
 
 .elevation(@n, @i: 1) when (@i <= @n) {

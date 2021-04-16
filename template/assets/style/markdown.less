@@ -115,11 +115,15 @@
     box-shadow: inset 0 -1px @gray-5;
   }
 
+  svg.feather {
+    vertical-align: bottom;
+    width: 1em;
+    height: unit(@line-height, em);
+  }
+
   .checkbox {
-    display: inline-block;
     margin-right: 0.4em;
     color: @gray-8;
-    user-select: none;
   }
 
   p,
@@ -164,6 +168,10 @@
 
     &:hover .header-anchor {
       display: inline-block;
+    }
+
+    svg.feather {
+      height: 1.25em;
     }
   }
 
