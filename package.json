@@ -1,6 +1,6 @@
 {
   "name": "@tarocch1/sitegen",
-  "version": "0.13.0",
+  "version": "0.13.1",
   "description": "A simple static site generator.",
   "license": "MIT",
   "author": "Tarocch1 <huiben.fang@gmail.com> (https://github.com/Tarocch1)",
