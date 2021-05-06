@@ -8,6 +8,8 @@ function initHash() {
   });
 
   window.addEventListener('scroll', onScroll);
+
+  activeAsideLink();
 }
 
 const onScroll = debounce(activeAsideLink, 200);
