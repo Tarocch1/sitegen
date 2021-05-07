@@ -7,17 +7,18 @@ function initHash() {
     hashs.push(decodeURIComponent(element.hash));
   });
 
-  window.addEventListener('hashchange', onHashChange);
-
   document.querySelector('main').addEventListener('scroll', onScroll);
 
+  window.addEventListener('hashchange', onHashChange);
+
   scrollToHash(location.hash);
 }
 
-function onHashChange(e) {
-  e.preventDefault();
-  scrollToHash(location.hash);
+function elementUnderTopEdge(element) {
+  return element.getBoundingClientRect().top > 57;
 }
+
+const onScroll = debounce(activeAsideLink, 200);
 
 function activeAsideLink() {
   let cur = '';
@@ -35,8 +36,6 @@ function activeAsideLink() {
   }
 }
 
-const onScroll = debounce(activeAsideLink, 200);
-
 function scrollToHash(hash) {
   hash = decodeURIComponent(hash);
   const id = hash.replace(/^#/, '');
@@ -50,8 +49,9 @@ function scrollToHash(hash) {
   }
 }
 
-function elementUnderTopEdge(element) {
-  return element.getBoundingClientRect().top > 57;
+function onHashChange(e) {
+  e.preventDefault();
+  scrollToHash(location.hash);
 }
 
 export { initHash };
