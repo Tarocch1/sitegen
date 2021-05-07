@@ -11,7 +11,9 @@
     <script type="module" src="./assets/js/index.js"></script>
     {{{head}}}
   </head>
-  <body class="{{#if links}}has-links{{/if}} {{#if toc}}has-toc{{/if}}">
+  <body
+    class="{{#trim}}{{#if links}}has-links{{/if}} {{#if toc}}has-toc{{/if}}{{/trim}}"
+  >
     <header class="layout-header">
       <div class="aside-button">
         <i data-feather="menu"></i>
