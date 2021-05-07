@@ -7,12 +7,17 @@ function initHash() {
     hashs.push(decodeURIComponent(element.hash));
   });
 
-  window.addEventListener('scroll', onScroll);
+  window.addEventListener('hashchange', onHashChange);
 
-  activeAsideLink();
+  document.querySelector('main').addEventListener('scroll', onScroll);
+
+  scrollToHash(location.hash);
 }
 
-const onScroll = debounce(activeAsideLink, 200);
+function onHashChange(e) {
+  e.preventDefault();
+  scrollToHash(location.hash);
+}
 
 function activeAsideLink() {
   let cur = '';
@@ -27,6 +32,21 @@ function activeAsideLink() {
   });
   if (cur) {
     document.querySelector(`aside a[href="${cur}"]`).classList.add('active');
+  }
+}
+
+const onScroll = debounce(activeAsideLink, 200);
+
+function scrollToHash(hash) {
+  hash = decodeURIComponent(hash);
+  const id = hash.replace(/^#/, '');
+  if (id) {
+    const element = document.querySelector(hash);
+    if (element) {
+      element.scrollIntoView();
+    }
+  } else {
+    document.querySelector('main').scrollTo(0, 0);
   }
 }
 

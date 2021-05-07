@@ -12,80 +12,78 @@
     {{{head}}}
   </head>
   <body class="{{#if links}}has-links{{/if}} {{#if toc}}has-toc{{/if}}">
-    <div class="layout">
-      <header class="layout-header">
-        <div class="aside-button">
-          <i data-feather="menu"></i>
-        </div>
-        <div class="home-link">
-          <a href="{{base}}">{{siteTitle}}</a>
-        </div>
-        <nav>
-          {{#each links}} {{#if external}}
-          <a href="{{url}}" target="_blank" rel="noopener noreferrer">
-            {{name}}
+    <header class="layout-header">
+      <div class="aside-button">
+        <i data-feather="menu"></i>
+      </div>
+      <div class="home-link">
+        <a href="{{base}}">{{siteTitle}}</a>
+      </div>
+      <nav>
+        {{#each links}} {{#if external}}
+        <a href="{{url}}" target="_blank" rel="noopener noreferrer">
+          {{name}}
+        </a>
+        {{else}}
+        <a class="{{#if active}}active{{/if}}" href="{{../base}}{{url}}">
+          {{name}}
+        </a>
+        {{/if}} {{/each}}
+      </nav>
+    </header>
+    <aside class="layout-aside">
+      <nav>
+        {{#each links}} {{#if external}}
+        <a href="{{url}}" target="_blank" rel="noopener noreferrer">
+          {{name}}
+        </a>
+        {{else}}
+        <a class="{{#if active}}active{{/if}}" href="{{../base}}{{url}}">
+          {{name}}
+        </a>
+        {{/if}} {{/each}}
+      </nav>
+      <hr />
+      <ul>
+        {{#each toc}}
+        <li>
+          <a class="level-{{level}}" href="#{{id}}" title="{{title}}">
+            {{title}}
           </a>
-          {{else}}
-          <a class="{{#if active}}active{{/if}}" href="{{../base}}{{url}}">
-            {{name}}
-          </a>
-          {{/if}} {{/each}}
-        </nav>
-      </header>
-      <aside class="layout-aside">
-        <nav>
-          {{#each links}} {{#if external}}
-          <a href="{{url}}" target="_blank" rel="noopener noreferrer">
-            {{name}}
-          </a>
-          {{else}}
-          <a class="{{#if active}}active{{/if}}" href="{{../base}}{{url}}">
-            {{name}}
-          </a>
-          {{/if}} {{/each}}
-        </nav>
-        <hr />
-        <ul>
-          {{#each toc}}
-          <li>
-            <a class="level-{{level}}" href="#{{id}}" title="{{title}}">
-              {{title}}
-            </a>
-          </li>
-          {{/each}}
-        </ul>
-      </aside>
-      <div class="aside-mask"></div>
-      <main class="layout-main" role="main">
-        <div class="layout-container">
-          <article class="layout-article markdown">{{{html}}}</article>
-          <footer class="layout-footer">
-            {{#if time}}
-            <time class="time">{{time}}</time>
-            {{/if}} {{#if copyright}}
-            <p class="copyright">{{copyright}}</p>
-            {{/if}}
-          </footer>
-        </div>
-      </main>
-      {{#if hot}}
-      <script>
-        let pathname = window.location.pathname;
-        if (pathname.endsWith('/')) pathname += 'index.html';
-        const ws = new WebSocket(`ws://${window.location.host}`);
-        ws.addEventListener('open', function (event) {
+        </li>
+        {{/each}}
+      </ul>
+    </aside>
+    <div class="aside-mask"></div>
+    <main class="layout-main" role="main">
+      <div class="layout-container">
+        <article class="layout-article markdown">{{{html}}}</article>
+        <footer class="layout-footer">
+          {{#if time}}
+          <time class="time">{{time}}</time>
+          {{/if}} {{#if copyright}}
+          <p class="copyright">{{copyright}}</p>
+          {{/if}}
+        </footer>
+      </div>
+    </main>
+    {{#if hot}}
+    <script>
+      let pathname = window.location.pathname;
+      if (pathname.endsWith('/')) pathname += 'index.html';
+      const ws = new WebSocket(`ws://${window.location.host}`);
+      ws.addEventListener('open', function (event) {
+        ws.send('ping');
+        setInterval(function () {
           ws.send('ping');
-          setInterval(function () {
-            ws.send('ping');
-          }, 60 * 1000);
-        });
-        ws.addEventListener('message', function (event) {
-          if (event.data === pathname) {
-            window.location.reload();
-          }
-        });
-      </script>
-      {{/if}}
-    </div>
+        }, 60 * 1000);
+      });
+      ws.addEventListener('message', function (event) {
+        if (event.data === pathname) {
+          window.location.reload();
+        }
+      });
+    </script>
+    {{/if}}
   </body>
 </html>
