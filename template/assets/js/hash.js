@@ -7,11 +7,9 @@ function initHash() {
     hashs.push(decodeURIComponent(element.hash));
   });
 
-  document.querySelector('main').addEventListener('scroll', onScroll);
+  document.addEventListener('scroll', onScroll);
 
-  window.addEventListener('hashchange', onHashChange);
-
-  scrollToHash(location.hash);
+  onScroll();
 }
 
 function elementUnderTopEdge(element) {
@@ -34,24 +32,6 @@ function activeAsideLink() {
   if (cur) {
     document.querySelector(`aside a[href="${cur}"]`).classList.add('active');
   }
-}
-
-function scrollToHash(hash) {
-  hash = decodeURIComponent(hash);
-  const id = hash.replace(/^#/, '');
-  if (id) {
-    const element = document.querySelector(hash);
-    if (element) {
-      element.scrollIntoView();
-    }
-  } else {
-    document.querySelector('main').scrollTo(0, 0);
-  }
-}
-
-function onHashChange(e) {
-  e.preventDefault();
-  scrollToHash(location.hash);
 }
 
 export { initHash };

@@ -7,8 +7,7 @@ function initAside() {
 }
 
 function operateAside(operate) {
-  const aside = document.querySelector('aside');
-  aside.classList[operate]('open');
+  document.body.classList[operate]('aside-open');
 }
 
 export { initAside };
