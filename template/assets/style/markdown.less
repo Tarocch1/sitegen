@@ -25,7 +25,10 @@
 
   * {
     margin-top: 0;
-    scroll-margin-top: @header-height;
+
+    &[id] {
+      scroll-margin-top: @header-height;
+    }
   }
 
   a {
