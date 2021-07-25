@@ -13,6 +13,7 @@ module.exports = {
       url: 'https://github.com/Tarocch1',
     },
   ],
+  breadcrumb: true, // Show breadcrumb
   markdown: {
     timeFormatter: (time) => dayjs(time).format('YYYY-MM-DD HH:mm:ss'), // Formatter for the time at the bottom of the page.
     toc: [2, 3], // Headings levels to use in toc.
