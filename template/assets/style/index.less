@@ -93,14 +93,13 @@ a {
   position: fixed;
   top: @header-height;
   bottom: 0;
-  left: 0;
+  left: -@aside-width;
   width: @aside-width;
   padding: @unit * 3 0;
   border-right: 1px solid @gray-5;
   background-color: @gray-1;
   overflow-y: auto;
-  transform: translateX(-100%);
-  transition: transform 0.2s ease;
+  transition: left 0.2s ease;
   box-shadow: none;
 
   nav {
@@ -253,7 +252,7 @@ a {
 
 .has-toc {
   .layout-aside {
-    transform: translateX(0);
+    left: 0;
     box-shadow: elevation(2);
   }
 
@@ -272,8 +271,8 @@ a {
     }
 
     .layout-aside {
+      left: -@mobile-aside-width;
       width: @mobile-aside-width;
-      transform: translateX(-100%);
       box-shadow: none;
     }
 
@@ -281,7 +280,7 @@ a {
       overflow: hidden;
 
       .layout-aside {
-        transform: translateX(0);
+        left: 0;
         box-shadow: elevation(2);
       }
 
