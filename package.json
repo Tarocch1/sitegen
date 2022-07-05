@@ -51,7 +51,7 @@
     "markdown-it-sub": "^1.0.0",
     "markdown-it-sup": "^1.0.0",
     "memfs": "^3.2.0",
-    "mermaid": "^8.9.2",
+    "mermaid": "^9.1.2",
     "mime-types": "^2.1.29",
     "normalize.css": "^8.0.1",
     "open": "^8.0.5",
